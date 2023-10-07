@@ -6,7 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5615b6091fea770fdf7d6160d8d7056cf1130c03
       - uses: actions/setup-python@v4
         with: 
           python-version: '3.10'
@@ -18,13 +21,20 @@ jobs:
           npm install
 
       - name: Executing build and create fonts via icomoon
+<<<<<<< HEAD
         shell: bash
+=======
+>>>>>>> 5615b6091fea770fdf7d6160d8d7056cf1130c03
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: >
           python ./.github/scripts/icomoon_build.py 
           ./.github/scripts/build_assets/geckodriver-v0.32.2-linux64/geckodriver ./icomoon.json 
+<<<<<<< HEAD
           ./devicon.json ./icons ./ $GITHUB_TOKEN --headless
+=======
+          ./devicon.json ./icons ./ "$GITHUB_TOKEN" --headless
+>>>>>>> 5615b6091fea770fdf7d6160d8d7056cf1130c03
 
       - name: Upload geckodriver.log for debugging purposes
         uses: actions/upload-artifact@v2
